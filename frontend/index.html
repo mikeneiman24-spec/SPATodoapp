@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitácora // SPATodoapp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  <main class="terminal">
+    <div class="terminal-bar">
+      <div class="dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-amber"></span>
+        <span class="dot dot-cyan"></span>
+      </div>
+      <span class="terminal-title">Bienvenido a Todo-List de MIKE</span>
+    </div>
+
+    <div class="terminal-body">
+      <header class="boot-line">
+        <span class="prompt">$</span> Todo-List MIKE
+        <span class="cursor-blink">_</span>
+      </header>
+      <p class="subline">Registra, elimina y filtra tareas en curso</p>
+
+      <form id="log-form" class="log-form">
+        <span class="prompt">&gt;</span>
+        <input type="text" id="log-input" placeholder="nueva entrada de tarea..." autocomplete="off" required>
+        <select id="priority-input" title="prioridad">
+          <option value="normal">normal</option>
+          <option value="alta">alta</option>
+          <option value="crítica">crítica</option>
+        </select>
+        <button type="submit">registrar</button>
+      </form>
+
+      <div class="filter-row">
+        <span class="prompt">grep</span>
+        <input type="text" id="filter-input" placeholder="filtrar entradas...">
+      </div>
+
+      <ul id="log-list" class="log-list"></ul>
+
+      <p id="empty-state" class="empty-state" hidden>
+        // registro vacío — ninguna entrada coincide con el filtro
+      </p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
